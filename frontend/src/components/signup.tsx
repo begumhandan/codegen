@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHandleSubmit } from "@/components/hooks/useSignUp/useHandleSubmit";
+import { useSignUp } from "@/components/hooks/useSignUp/useHandleSubmit";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export function Signup({ className, ...props }: React.ComponentProps<"div">) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { handleSubmit } = useHandleSubmit();
+  const { handleSubmit } = useSignUp();
 
   return (
     <div className={cn("p-[10px] md:p-[2rem] max-w-sm flex flex-col gap-6", className)} {...props}>
