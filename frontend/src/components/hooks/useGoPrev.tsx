@@ -1,6 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useNavigatePages } from "./useNavigatePages";
-import { useLogOut } from "./useLogOut/UseLogOut";
+import { useLogOut } from "./useLogOut";
 
 export const useGoPrev = () => {
   const navigate = useNavigate();
