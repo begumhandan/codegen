@@ -1,0 +1,26 @@
+{
+  "name": "my-app",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "db:pull": "bun drizzle-kit pull",
+    "db:push": "bun drizzle-kit push",
+    "db:generate": "bun drizzle-kit generate",
+    "db:migrate": "bun drizzle-kit migrate",
+    "db:studio": "bun drizzle-kit studio"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.7.2",
+    "@types/pg": "^8.15.5",
+    "dotenv": "^17.2.1",
+    "drizzle-orm": "^0.44.4",
+    "drizzle-zod": "^0.8.3",
+    "hono": "^4.9.1",
+    "pg": "^8.16.3",
+    "postgres": "^3.4.7",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.20",
+    "drizzle-kit": "^0.31.4"
+  }
+}
