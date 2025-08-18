@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as AnasayfaRouteImport } from './routes/anasayfa'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo.tanstack-query'
 import { Route as DemoTableRouteImport } from './routes/demo.table'
@@ -17,6 +18,11 @@ import { Route as DemoTableRouteImport } from './routes/demo.table'
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnasayfaRoute = AnasayfaRouteImport.update({
+  id: '/anasayfa',
+  path: '/anasayfa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,12 +43,14 @@ const DemoTableRoute = DemoTableRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/anasayfa': typeof AnasayfaRoute
   '/signup': typeof SignupRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/anasayfa': typeof AnasayfaRoute
   '/signup': typeof SignupRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -50,20 +58,33 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/anasayfa': typeof AnasayfaRoute
   '/signup': typeof SignupRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/signup' | '/demo/table' | '/demo/tanstack-query'
+  fullPaths:
+    | '/'
+    | '/anasayfa'
+    | '/signup'
+    | '/demo/table'
+    | '/demo/tanstack-query'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/signup' | '/demo/table' | '/demo/tanstack-query'
-  id: '__root__' | '/' | '/signup' | '/demo/table' | '/demo/tanstack-query'
+  to: '/' | '/anasayfa' | '/signup' | '/demo/table' | '/demo/tanstack-query'
+  id:
+    | '__root__'
+    | '/'
+    | '/anasayfa'
+    | '/signup'
+    | '/demo/table'
+    | '/demo/tanstack-query'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnasayfaRoute: typeof AnasayfaRoute
   SignupRoute: typeof SignupRoute
   DemoTableRoute: typeof DemoTableRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
@@ -76,6 +97,13 @@ declare module '@tanstack/react-router' {
       path: '/signup'
       fullPath: '/signup'
       preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anasayfa': {
+      id: '/anasayfa'
+      path: '/anasayfa'
+      fullPath: '/anasayfa'
+      preLoaderRoute: typeof AnasayfaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,6 +132,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnasayfaRoute: AnasayfaRoute,
   SignupRoute: SignupRoute,
   DemoTableRoute: DemoTableRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
