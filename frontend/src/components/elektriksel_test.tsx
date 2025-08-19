@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { CreateETCard } from "./ETs/CreateETCard";
-import { DeleteETCard } from "./ETs/DeleteETcard";
+import { CreateETCard } from "./ET/createETCodeCard";
+import { DeleteETCard } from "./ET/deleteETCodeCard";
 import { Label } from "./ui/label";
 
 const Elektriksel_Test = () => {
