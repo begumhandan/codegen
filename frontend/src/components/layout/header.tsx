@@ -8,12 +8,12 @@ export const Header: FC<PropsWithChildren> = () => {
   const goPrev = useGoPrev();
   const { currentIndex, pages } = useNavigatePages();
   return (
-    <div className="grid grid-cols-2 gap-2 min-h-11 ">
+    <div className="grid grid-cols-2 gap-2 h-11 ">
       {/* Left Arrow */}
       <button
         onClick={goPrev}
         disabled={currentIndex <= 0}
-        className=" bg-[#f4f2f0]  transform-translate z-10 hover:shadow-lg transition-shadow border border-gray-200 flex items-center justify-center"
+        className="bg-[#f4f2f0]  transform-translate z-10 hover:shadow-lg transition-shadow border border-gray-200 flex items-center justify-center rounded-sm"
       >
         &lt;
       </button>
@@ -21,7 +21,7 @@ export const Header: FC<PropsWithChildren> = () => {
       <button
         onClick={goNext}
         disabled={currentIndex >= pages.length - 1}
-        className="bg-[#f4f2f0]  transform-translate z-10 hover:shadow-lg transition-shadow border border-gray-200"
+        className="bg-[#f4f2f0]  transform-translate z-10 hover:shadow-lg transition-shadow border border-gray-200 flex items-center justify-center rounded-sm"
       >
         &gt;
       </button>

@@ -12,8 +12,8 @@ export function Login({ className, ...props }: React.ComponentProps<"div">) {
   const { handleSubmit } = useHandleSubmit();
 
   return (
-    <div className={cn("p-[10px] md:p-[2rem] max-w-sm flex flex-col gap-6", className)} {...props}>
-      <Card>
+    <div className={cn("p-[5px] md:p-[2rem] max-w-sm flex flex-col gap-4 h-fit", className)} {...props}>
+      <Card className="flex-shrink-0">
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Kullanıcı Giriş</CardTitle>
         </CardHeader>

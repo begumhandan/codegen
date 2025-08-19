@@ -7,7 +7,7 @@ interface DefaultLayoutProps {
 
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <div className="bg-[#fcfcf8]">
+    <div className="bg-[#fcfcf8] h-screen flex flex-col overflow-hidden">
       <Header />
       <main>{children}</main>
     </div>
