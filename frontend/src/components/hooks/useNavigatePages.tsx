@@ -6,7 +6,7 @@ export const useNavigatePages = () => {
   const pages = [
     "/",
     "/anasayfa",
-    "/Cmm",
+    "/cmm",
     "/elektriksel_test",
     "/signup",
     "/sayfa3",
