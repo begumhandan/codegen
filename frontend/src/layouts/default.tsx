@@ -7,9 +7,9 @@ interface DefaultLayoutProps {
 
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <>
+    <div className="bg-[#fcfcf8]">
       <Header />
       <main>{children}</main>
-    </>
+    </div>
   );
 }

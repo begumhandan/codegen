@@ -24,7 +24,7 @@ const Elektriksel_Test = () => {
         <Label className="text-left mx-5 my-5">ET</Label>
         <Label className="text-right capitalize mx-5 my-5">{currentUser && `Role: ${currentUser.role}`}</Label>
       </div>
-      <div className="bg-muted min-h-svh grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-10 place-items-center">
+      <div className="min-h-svh grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-10 place-items-center">
         <CreateETCard />
         <DeleteETCard />
       </div>
