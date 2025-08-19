@@ -3,7 +3,7 @@ import { CreateETCard } from "./ETs/CreateETCard";
 import { DeleteETCard } from "./ETs/DeleteETcard";
 import { Label } from "./ui/label";
 
-const InputIconButtonDemo = () => {
+const Elektriksel_Test = () => {
   const [currentUser, setCurrentUser] = useState<any>(null);
 
   useEffect(() => {
@@ -32,5 +32,5 @@ const InputIconButtonDemo = () => {
   );
 };
 export function ElektrikselTest() {
-  return <InputIconButtonDemo />;
+  return <Elektriksel_Test />;
 }
