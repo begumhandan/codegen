@@ -8,135 +8,166 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignupRouteImport } from './routes/signup'
-import { Route as AnasayfaRouteImport } from './routes/anasayfa'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as DemoTanstackQueryRouteImport } from './routes/demo.tanstack-query'
-import { Route as DemoTableRouteImport } from './routes/demo.table'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as SignupRouteImport } from "./routes/signup";
+import { Route as Elektriksel_textRouteImport } from "./routes/elektriksel_text";
+import { Route as CmmRouteImport } from "./routes/cmm";
+import { Route as AnasayfaRouteImport } from "./routes/anasayfa";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as DemoTanstackQueryRouteImport } from "./routes/demo.tanstack-query";
+import { Route as DemoTableRouteImport } from "./routes/demo.table";
 
 const SignupRoute = SignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
+  id: "/signup",
+  path: "/signup",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const Elektriksel_textRoute = Elektriksel_textRouteImport.update({
+  id: "/elektriksel_text",
+  path: "/elektriksel_text",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const CmmRoute = CmmRouteImport.update({
+  id: "/cmm",
+  path: "/cmm",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const AnasayfaRoute = AnasayfaRouteImport.update({
-  id: '/anasayfa',
-  path: '/anasayfa',
+  id: "/anasayfa",
+  path: "/anasayfa",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
-  id: '/demo/tanstack-query',
-  path: '/demo/tanstack-query',
+  id: "/demo/tanstack-query",
+  path: "/demo/tanstack-query",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const DemoTableRoute = DemoTableRouteImport.update({
-  id: '/demo/table',
-  path: '/demo/table',
+  id: "/demo/table",
+  path: "/demo/table",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/anasayfa': typeof AnasayfaRoute
-  '/signup': typeof SignupRoute
-  '/demo/table': typeof DemoTableRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  "/": typeof IndexRoute;
+  "/anasayfa": typeof AnasayfaRoute;
+  "/cmm": typeof CmmRoute;
+  "/elektriksel_text": typeof Elektriksel_textRoute;
+  "/signup": typeof SignupRoute;
+  "/demo/table": typeof DemoTableRoute;
+  "/demo/tanstack-query": typeof DemoTanstackQueryRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/anasayfa': typeof AnasayfaRoute
-  '/signup': typeof SignupRoute
-  '/demo/table': typeof DemoTableRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  "/": typeof IndexRoute;
+  "/anasayfa": typeof AnasayfaRoute;
+  "/cmm": typeof CmmRoute;
+  "/elektriksel_text": typeof Elektriksel_textRoute;
+  "/signup": typeof SignupRoute;
+  "/demo/table": typeof DemoTableRoute;
+  "/demo/tanstack-query": typeof DemoTanstackQueryRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/anasayfa': typeof AnasayfaRoute
-  '/signup': typeof SignupRoute
-  '/demo/table': typeof DemoTableRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/anasayfa": typeof AnasayfaRoute;
+  "/cmm": typeof CmmRoute;
+  "/elektriksel_text": typeof Elektriksel_textRoute;
+  "/signup": typeof SignupRoute;
+  "/demo/table": typeof DemoTableRoute;
+  "/demo/tanstack-query": typeof DemoTanstackQueryRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/anasayfa'
-    | '/signup'
-    | '/demo/table'
-    | '/demo/tanstack-query'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/anasayfa' | '/signup' | '/demo/table' | '/demo/tanstack-query'
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: "/" | "/anasayfa" | "/cmm" | "/elektriksel_text" | "/signup" | "/demo/table" | "/demo/tanstack-query";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/" | "/anasayfa" | "/cmm" | "/elektriksel_text" | "/signup" | "/demo/table" | "/demo/tanstack-query";
   id:
-    | '__root__'
-    | '/'
-    | '/anasayfa'
-    | '/signup'
-    | '/demo/table'
-    | '/demo/tanstack-query'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/anasayfa"
+    | "/cmm"
+    | "/elektriksel_text"
+    | "/signup"
+    | "/demo/table"
+    | "/demo/tanstack-query";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AnasayfaRoute: typeof AnasayfaRoute
-  SignupRoute: typeof SignupRoute
-  DemoTableRoute: typeof DemoTableRoute
-  DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
+  IndexRoute: typeof IndexRoute;
+  AnasayfaRoute: typeof AnasayfaRoute;
+  CmmRoute: typeof CmmRoute;
+  Elektriksel_textRoute: typeof Elektriksel_textRoute;
+  SignupRoute: typeof SignupRoute;
+  DemoTableRoute: typeof DemoTableRoute;
+  DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/signup': {
-      id: '/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof SignupRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/anasayfa': {
-      id: '/anasayfa'
-      path: '/anasayfa'
-      fullPath: '/anasayfa'
-      preLoaderRoute: typeof AnasayfaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/tanstack-query': {
-      id: '/demo/tanstack-query'
-      path: '/demo/tanstack-query'
-      fullPath: '/demo/tanstack-query'
-      preLoaderRoute: typeof DemoTanstackQueryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demo/table': {
-      id: '/demo/table'
-      path: '/demo/table'
-      fullPath: '/demo/table'
-      preLoaderRoute: typeof DemoTableRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    "/signup": {
+      id: "/signup";
+      path: "/signup";
+      fullPath: "/signup";
+      preLoaderRoute: typeof SignupRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/elektriksel_text": {
+      id: "/elektriksel_text";
+      path: "/elektriksel_text";
+      fullPath: "/elektriksel_text";
+      preLoaderRoute: typeof Elektriksel_textRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/cmm": {
+      id: "/cmm";
+      path: "/cmm";
+      fullPath: "/cmm";
+      preLoaderRoute: typeof CmmRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/anasayfa": {
+      id: "/anasayfa";
+      path: "/anasayfa";
+      fullPath: "/anasayfa";
+      preLoaderRoute: typeof AnasayfaRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/demo/tanstack-query": {
+      id: "/demo/tanstack-query";
+      path: "/demo/tanstack-query";
+      fullPath: "/demo/tanstack-query";
+      preLoaderRoute: typeof DemoTanstackQueryRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/demo/table": {
+      id: "/demo/table";
+      path: "/demo/table";
+      fullPath: "/demo/table";
+      preLoaderRoute: typeof DemoTableRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnasayfaRoute: AnasayfaRoute,
+  CmmRoute: CmmRoute,
+  Elektriksel_textRoute: Elektriksel_textRoute,
   SignupRoute: SignupRoute,
   DemoTableRoute: DemoTableRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
-}
-export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+};
+export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();
