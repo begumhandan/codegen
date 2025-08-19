@@ -1,4 +1,4 @@
-import { generateETCodeWithPart } from "@/lib/utils";
+import { generateCodeWithPart } from "@/libs/utils";
 
 //rastgele Elektriksel Test kodu üretme
 export const useHandleGenerate = () => {
@@ -8,7 +8,7 @@ export const useHandleGenerate = () => {
       return;
     }
 
-    const newCode = generateETCodeWithPart(currentUser.role, partCode);
+    const newCode = generateCodeWithPart(currentUser.role, partCode);
     setCurrentCode(newCode.replace("ET-", ""));
   };
 
