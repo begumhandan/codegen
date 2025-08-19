@@ -48,7 +48,3 @@ export async function deleteCMM(code: string, userId: number): Promise<void> {
     throw new Error(errorResponse.error || "CMM silinemedi");
   }
 }
-//Cmm kodu kopyalama
-export function copyToClipboard(text: string): void {
-  navigator.clipboard.writeText(text);
-}

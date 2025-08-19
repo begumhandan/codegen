@@ -48,7 +48,3 @@ export async function deleteET(code: string, userId: number): Promise<void> {
     throw new Error(errorResponse.error || "Electrical testing silinemedi");
   }
 }
-//Elektriksel Test kodu kopyalama
-export function copyToClipboard(text: string): void {
-  navigator.clipboard.writeText(text);
-}
