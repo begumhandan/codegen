@@ -12,7 +12,7 @@ export function Anasayfa() {
 
           {/* 2. Kutu */}
           <div className="bg-green-50 rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow cursor-pointer flex flex-col items-center justify-center">
-            <a href="/elekriksel_test">
+            <a href="/elektriksel_test">
               <h3 className="text-lg font-semibold text-center">ET</h3>
             </a>
           </div>
