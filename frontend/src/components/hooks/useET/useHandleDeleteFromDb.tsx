@@ -1,4 +1,4 @@
-import { deleteET } from "@/api/electrical_testing";
+import { deleteET } from "@/api/elektriksel_test";
 
 export const useHandleDeleteFromDB = () => {
   //ET kodunu databaseden kod silme
