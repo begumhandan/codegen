@@ -1,6 +1,6 @@
-import { generateCmmCodeWithPart } from "@/lib/utils";
+import { generateCodeWithPart } from "@/libs/utils";
 
-//rastgele Cmm kodu üretme
+// rastgele Cmm kodu üretme
 export const useHandleGenerate = () => {
   const handleGenerate = (currentUser: any, setCurrentCode: (code: string) => void, partCode: string) => {
     if (!currentUser) {
@@ -8,7 +8,7 @@ export const useHandleGenerate = () => {
       return;
     }
 
-    const newCode = generateCmmCodeWithPart(currentUser.role, partCode);
+    const newCode = generateCodeWithPart(currentUser.role, partCode);
     setCurrentCode(newCode.replace("CMM-", ""));
   };
 
