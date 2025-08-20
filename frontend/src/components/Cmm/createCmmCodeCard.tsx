@@ -1,7 +1,7 @@
 import { CopyIcon } from "lucide-react";
 import { useEffect, useId, useState } from "react";
 import { useHandleClear } from "../hooks/useHandleClear";
-import { useHandleCopy } from "../hooks/useHandleCopyCode";
+import { useHandleCopy } from "../../hooks/useCopyToClipboard";
 import { useHandleGenerate } from "../hooks/useCmm/useHandleGenerate";
 import { useHandleSave } from "../hooks/useCmm/useHandleSave";
 import { Button } from "../ui/button";
