@@ -1,7 +1,7 @@
 import { CopyIcon } from "lucide-react";
 import { useEffect, useId, useState } from "react";
 import { useHandleClear } from "../hooks/useHandleClear";
-import { useHandleCopy } from "../hooks/useHandleCopyCode";
+import { useCopyToClipboard } from "../../hooks/useCopyToClipboard";
 import { useHandleGenerate } from "../hooks/useET/useHandleGenerate";
 import { useHandleSave } from "../hooks/useET/useHandleSave";
 import { Card, CardHeader } from "@/components/ui/card";
@@ -19,7 +19,7 @@ export const CreateETCard = () => {
 
   const { handleGenerate } = useHandleGenerate();
   const { handleSave } = useHandleSave();
-  const { handleCopy } = useHandleCopy();
+  const [, copyToClipboard] = useCopyToClipboard();
   const { handleClear } = useHandleClear();
 
   const getFullCode = () => {
@@ -64,7 +64,7 @@ export const CreateETCard = () => {
           disabled
         />
         <Button
-          onClick={() => handleCopy(getFullCode(), setCopyMessage)}
+          onClick={() => copyToClipboard(getFullCode())}
           variant="outline"
           size="icon"
           className="rounded-s-none"
