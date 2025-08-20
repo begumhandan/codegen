@@ -14,6 +14,35 @@ router.get("/", async (c) => {
   return c.json(cmmProcesses);
 });
 
+//kullanıcı id ye göre CMM getirme
+router.get("/:userId", async (c) => {
+  try {
+    const { userId } = c.req.param();
+    console.log("CMM codes request for user:", userId);
+
+    const codes = await db.query.Cmm_process.findMany({
+      where: eq(Cmm_process.created_by, Number(userId)),
+    });
+
+    console.log("CMM codes found:", codes.length);
+
+    return c.json({
+      success: true,
+      codes: codes,
+      data: codes,
+    });
+  } catch (error) {
+    console.error("Error in CMM GET:", error);
+    return c.json(
+      {
+        success: false,
+        error: "Database error",
+      },
+      500
+    );
+  }
+});
+
 //id'ye göre Cmm getirme
 router.get("/:id", async (c) => {
   const { id } = c.req.param();
