@@ -1,11 +1,9 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useNavigatePages } from "./useNavigatePages";
-import { useLogOut } from "./useLogOut";
 
 export const useGoPrev = () => {
   const navigate = useNavigate();
   const { currentIndex } = useNavigatePages();
-  const logout = useLogOut();
   const goPrev = () => {
     switch (currentIndex) {
       case 5:
@@ -26,19 +24,8 @@ export const useGoPrev = () => {
       case 2:
         navigate({ to: "/anasayfa" });
         break;
-      case 1:
-        //Eğer /anasqyfa sayfasındaysam ve geri gidiceksem kullanıcı giriş sayfasına çıkış yapmak isteyip istemeyeceğinin mesajını göderiyorum okeylerse çıkış  yapıyor.
-        if (currentIndex === 1) {
-          const isConfirmed = confirm("çıkış mı yapmak istiyorsunuz?");
-          //çıkış işlemi
-          if (isConfirmed) {
-            const success = logout();
-            alert(success ? "çıkış başarılı" : "çıkış başarısız");
-          }
-          // eğer hayır ise hiçbir şey yapma
-
-          break;
-        }
+      default:
+        break;
     }
   };
   return goPrev;
