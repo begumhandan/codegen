@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CreateETCard } from "./ET/createETCodeCard";
 import { DeleteETCard } from "./ET/deleteETCodeCard";
-import { Label } from "./ui/label";
+import { GoPrevButton } from "@/components/prevbutton";
 
 const Elektriksel_Test = () => {
   const [currentUser, setCurrentUser] = useState<any>(null);
@@ -19,16 +19,16 @@ const Elektriksel_Test = () => {
   }, [currentUser]);
 
   return (
-    <>
-      <div className="flex justify-between mb-2">
-        <Label className="text-left mx-5 my-5">ET</Label>
-        <Label className="text-right capitalize mx-5 my-5">{currentUser && `Role: ${currentUser.role}`}</Label>
-      </div>
-      <div className="min-h-svh grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-10 place-items-center">
+    <div className="flex">
+      {/* <div className="flex justify-between mb-2">
+          <Label className="text-left mx-5 my-5">ET</Label>
+          <Label className="text-right capitalize mx-5 my-5">{currentUser && `Role: ${currentUser.role}`}</Label>
+        </div> */}
+      <div className="min-h-svh grid grid-cols-1 md:grid-cols-2 gap-2 p-20 md:p-20 place-items-center">
         <CreateETCard />
         <DeleteETCard />
       </div>
-    </>
+    </div>
   );
 };
 export function ElektrikselTest() {
