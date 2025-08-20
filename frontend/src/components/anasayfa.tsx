@@ -1,3 +1,4 @@
+import { GoPrevButton } from "@/components/prevbutton";
 import { LinkButton } from "./anasayfabutton";
 
 export function Anasayfa() {
@@ -50,12 +51,14 @@ export function Anasayfa() {
   ];
 
   return (
-    <div className="justify-center w-full h-[calc(100vh-64px)] flex items-center p-4">
-      <div className="w-full max-w-7xl h-full max-h-screen flex items-center justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 h-full w-full items-center">
-          {buttons.map((button, index) => (
-            <LinkButton key={index} href={button.href} title={button.title} bgColor={button.bgColor} />
-          ))}
+    <div className="flex h-full">
+      <div className="justify-center w-full h-[calc(100vh-64px)] flex items-center p-4">
+        <div className="w-full max-w-7xl h-full max-h-screen flex items-center justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 h-full w-full items-center">
+            {buttons.map((button, index) => (
+              <LinkButton key={index} href={button.href} title={button.title} bgColor={button.bgColor} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
