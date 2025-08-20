@@ -1,6 +1,38 @@
 const API_BASE = "http://localhost:3000";
 import type { GenerateCMMRequest, CMMResponse } from "@/types";
 
+//cmm getirme
+export async function fetchAllCmmCodes(): Promise<CMMResponse> {
+  const res = await fetch(`${API_BASE}/cmm`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP hatası! durum: ${res.status}`);
+  }
+
+  return res.json();
+}
+
+//Cmm kullanıcı id kodlarını getirme
+export async function fetchCmmCodes(userId: number): Promise<CMMResponse> {
+  const res = await fetch(`${API_BASE}/cmm/${userId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP hatası! durum: ${res.status}`);
+  }
+
+  return res.json();
+}
+
 //cmm üretme
 export async function generateCMM(data: GenerateCMMRequest): Promise<CMMResponse> {
   const response = await fetch(`${API_BASE}/cmm/generate`, {
