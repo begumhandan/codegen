@@ -20,6 +20,13 @@ export interface RegisterRequest {
   password: string;
   role: string;
 }
+export interface CmmCode {
+  id: string;
+  code: string;
+  createdBy: string;
+  createdAt: string;
+  status: "active" | "deleted";
+}
 
 export interface GenerateCMMRequest {
   user_id: number;
