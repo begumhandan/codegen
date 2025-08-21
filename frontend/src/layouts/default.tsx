@@ -1,4 +1,3 @@
-import { Header } from "@/components/layout/header";
 import type { ReactNode } from "react";
 
 interface DefaultLayoutProps {
@@ -7,8 +6,7 @@ interface DefaultLayoutProps {
 
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <div className="bg-[#fcfcf8] h-screen flex flex-col overflow-hidden">
-      <Header />
+    <div className="bg-[#fcfcf8] h-screen overflow-hidden">
       <main>{children}</main>
     </div>
   );
