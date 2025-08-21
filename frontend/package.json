@@ -8,12 +8,13 @@
     "build": "vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",
-    "lint": "biome lint",
-    "format": "biome format"
+    "lint": "biome lint .",
+    "format": "biome format ."
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
     "@hookform/resolvers": "^5.2.1",
+    "@paralleldrive/cuid2": "^2.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-aspect-ratio": "^1.1.7",
