@@ -1,7 +1,7 @@
 import { Hono } from "hono";
-import cmmRouter from "./routes/cmm.router";
+import codeRouter from "./routes/code.router";
 
-import electricalTestingRouter from "./routes/electrical_testing.router";
+// import electricalTestingRouter from "./routes/electrical_testing.router";
 import usersRouter from "./routes/users.router";
 const app = new Hono();
 
@@ -21,8 +21,8 @@ try {
   console.error(" Error importing electrical testing router:", error);
 }
 // Routes
-app.route("/cmm", cmmRouter);
-app.route("/electrical_testing", electricalTestingRouter);
+app.route("/code", codeRouter);
+// app.route("/electrical_testing", electricalTestingRouter);
 app.route("/users", usersRouter);
 
 app.get("/", (c) => {
