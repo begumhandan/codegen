@@ -10,13 +10,7 @@ export const users = pgTable("users", {
   role: text("role").notNull(),
 });
 
-export const Cmm_process = pgTable("cmms", {
-  id: serial("id").primaryKey(),
-  code: text("code").notNull().unique(),
-  created_by: integer("created_by").references(() => users.id),
-  createdAt: timestamp("created_at").defaultNow(),
-});
-export const electrical_testing_process = pgTable("electrical_testing_processes", {
+export const serialNumber = pgTable("serial_number", {
   id: serial("id").primaryKey(),
   code: text("code").notNull().unique(),
   created_by: integer("created_by").references(() => users.id),
@@ -25,18 +19,11 @@ export const electrical_testing_process = pgTable("electrical_testing_processes"
 
 //relations
 export const usersRelations = relations(users, ({ many }) => ({
-  cmmProcesses: many(Cmm_process),
-  electricalProcesses: many(electrical_testing_process),
+  serialNumbers: many(serialNumber),
 }));
-export const cmmProcessRelations = relations(Cmm_process, ({ one }) => ({
+export const uniqueCode = relations(serialNumber, ({ one }) => ({
   creator: one(users, {
-    fields: [Cmm_process.created_by],
-    references: [users.id],
-  }),
-}));
-export const electricalTestingRelations = relations(electrical_testing_process, ({ one }) => ({
-  creator: one(users, {
-    fields: [electrical_testing_process.created_by],
+    fields: [serialNumber.created_by],
     references: [users.id],
   }),
 }));
