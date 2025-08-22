@@ -1,4 +1,4 @@
-import { deleteCMM } from "@/api/cmm";
+import { deleteCMM } from "@/api/code";
 
 export const useHandleDeleteFromDB = () => {
   // CMM kodunu databaseden silme

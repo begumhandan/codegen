@@ -8,3 +8,4 @@ export const db = drizzle(client, {
   schema,
   casing: "snake_case",
 });
+//pg kullan

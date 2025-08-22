@@ -1,28 +1,28 @@
-import { saveET } from "@/api/elektriksel_test";
+// import { saveET } from "@/api/elektriksel_test";
 
-export const useHandleSave = () => {
-  //Elektriksel Test kodunu database'e kaydet
-  const handleSave = async (currentCode: string, currentUser: any, setIsSaving: (saving: boolean) => void) => {
-    if (!currentCode) {
-      alert("Kaydedilecek kod yok!");
-      return;
-    }
+// export const useHandleSave = () => {
+//   //Elektriksel Test kodunu database'e kaydet
+//   const handleSave = async (currentCode: string, currentUser: any, setIsSaving: (saving: boolean) => void) => {
+//     if (!currentCode) {
+//       alert("Kaydedilecek kod yok!");
+//       return;
+//     }
 
-    if (!currentUser) {
-      alert("Giriş yapmanız gerekiyor!");
-      return;
-    }
+//     if (!currentUser) {
+//       alert("Giriş yapmanız gerekiyor!");
+//       return;
+//     }
 
-    setIsSaving(true);
-    try {
-      await saveET(currentCode, currentUser.id);
-      alert("Kod database'e kaydedildi!");
-    } catch (error) {
-      console.error("Save error:", error);
-      alert("Kod kaydedilemedi!");
-    } finally {
-      setIsSaving(false);
-    }
-  };
-  return { handleSave };
-};
+//     setIsSaving(true);
+//     try {
+//       await saveET(currentCode, currentUser.id);
+//       alert("Kod database'e kaydedildi!");
+//     } catch (error) {
+//       console.error("Save error:", error);
+//       alert("Kod kaydedilemedi!");
+//     } finally {
+//       setIsSaving(false);
+//     }
+//   };
+//   return { handleSave };
+// };
